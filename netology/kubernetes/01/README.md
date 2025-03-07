@@ -2,10 +2,9 @@
 
 ## Задание 1. Установка MicroK8S
 
-1. Установить MicroK8S на на удалённую виртуальную машину.
-   Была создана ВМ в Yandex.Cloud **Ubuntu 24.04.2 LTS**, на ней было установлено microk8s: ```sudo snap install microk8s --classic```
-2. Были установленыь dashboard и dashboard-proxy.
-3. В файле **/var/snap/microk8s/current/certs/csr.conf.template** был добавлен внешний ip-адрес ВМ, а затем были обновить сертификаты ```sudo microk8s refresh-certs --cert front-proxy-client.crt```.
+1. Была создана ВМ в Yandex.Cloud **Ubuntu 24.04.2 LTS**, на ней было установлено microk8s: ```sudo snap install microk8s --classic```
+2. Были установлены dashboard и dashboard-proxy: ```microk8s enable dashboard``` и ```microk8s enable dashboard-proxy```.
+3. В файле **/var/snap/microk8s/current/certs/csr.conf.template** был добавлен внешний ip-адрес ВМ, а затем были обновлены сертификаты ```sudo microk8s refresh-certs --cert front-proxy-client.crt```.
 
 
 
