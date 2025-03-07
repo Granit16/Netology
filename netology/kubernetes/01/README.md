@@ -13,7 +13,7 @@
 ## Задание 2. Установка и настройка локального kubectl
 1. Установил на локальную машину **kubectl**.
    
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/01/pics/kubectl_get_nodes.png)
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/01/pics/kubectl_get_nodes1.png)
    
 3. Настроил локальное подключение к кластеру: вывел config на мастер ноде и поместил его в **~/.kube/config**
 4. Сделал port-forward ```kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443``` и подключился к dashboard
