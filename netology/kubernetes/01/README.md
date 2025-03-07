@@ -6,7 +6,7 @@
 2. Были установлены dashboard и dashboard-proxy: ```microk8s enable dashboard``` и ```microk8s enable dashboard-proxy```.
 3. В файле **/var/snap/microk8s/current/certs/csr.conf.template** был добавлен внешний ip-адрес ВМ, а затем были обновлены сертификаты ```sudo microk8s refresh-certs --cert front-proxy-client.crt```.
 
-![](https://github.com/Granit16/Netology//blob/main/kubernetes/01/pics/microk8s_status.png)
+![](https://github.com/Granit16/Netology/blob/main/kubernetes/01/pics/microk8s_status.png)
 https://github.com/Granit16/Netology/blob/main/netology/kubernetes/01/pics/mikrok8s_status.png
 
 ## Задача 2: Логи
