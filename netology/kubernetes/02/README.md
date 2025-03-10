@@ -2,20 +2,21 @@
 
 ## ЗЗадание 1. Создать Pod с именем hello-world
 
-1. Создал манифест для Pod **hello-world.yaml**.
-2. Использовать image - gcr.io/kubernetes-e2e-test-images/echoserver:2.2.
-3. Подключился к ластеру на локальной desktop-машине, пробросил порт и в браузере обратился к созданному поду по проброшенному порту 127.0.0.1:8080:
+1. Создал манифест для Pod **hello-world-pod.yaml**.
+2. Использовал image - gcr.io/kubernetes-e2e-test-images/echoserver:2.2.
+3. Подключился к кластеру на локальной desktop-машине, пробросил порт и в браузере обратился к созданному поду по проброшенному порту 127.0.0.1:8080:
 
 ![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/02/pics/port-forward.png)
-    https://github.com/Granit16/Netology/blob/main/netology/kubernetes/02/pics/port-forward.png
+    
     
 
-## Задание 2. Установка и настройка локального kubectl
-1. Установил на локальную машину **kubectl**.
-   
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/01/pics/kubectl_get_nodes1.png)
-   
-3. Настроил локальное подключение к кластеру: вывел config на мастер ноде и поместил его в **~/.kube/config**
-4. Сделал port-forward ```kubectl port-forward -n kube-system service/kubernetes-dashboard 10443:443``` и подключился к dashboard
+## Задание 2. Создать Service и подключить его к Pod
+1. Создал Pod с именем netology-web: **netology-web-pod.yaml** 
+2. Использовал image — gcr.io/kubernetes-e2e-test-images/echoserver:2.2.
+3. Создал Service с именем netology-svc и подключил к netology-web: **netology-svc.yaml**
+4. Подключиться на локальной машине к Service с помощью kubectl port-forward и обратился к созданному поду по проброшенному порту 127.0.0.1:8080 (собственно идентичный результат):
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/02/pics/port-forward.png)
 
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/01/pics/microk8s_dashboard.png)
+## Вывод команд kubectl get pods & kubectl get services
+
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/02/pics/status.png)
