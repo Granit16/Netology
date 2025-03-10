@@ -2,12 +2,12 @@
 
 ## ЗЗадание 1. Создать Pod с именем hello-world
 
-1. Создал манифест для Pod hello-world.yaml.
+1. Создал манифест для Pod **hello-world.yaml**.
 2. Использовать image - gcr.io/kubernetes-e2e-test-images/echoserver:2.2.
 3. Подключился к ластеру на локальной desktop-машине, пробросил порт и в браузере обратился к созданному поду по проброшенному порту 127.0.0.1:8080:
 
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/02/pics/port-forward.png.png)
-    
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/02/pics/port-forward.png)
+    https://github.com/Granit16/Netology/blob/main/netology/kubernetes/02/pics/port-forward.png
     
 
 ## Задание 2. Установка и настройка локального kubectl
