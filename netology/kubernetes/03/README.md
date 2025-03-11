@@ -22,13 +22,18 @@
     
 
 ## Задание 2. Создать Deployment и обеспечить старт основного контейнера при выполнении условий
-1. Создал Pod с именем netology-web: [**netology-web-pod.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/02/yaml/netology-web-pod.yaml)
-2. Использовал image — gcr.io/kubernetes-e2e-test-images/echoserver:2.2.
-3. Создал Service с именем netology-svc и подключил к netology-web: [**netology-svc.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/02/yaml/netology-svc.yamll)
-4. Подключился на локальной машине к Service с помощью kubectl port-forward и обратился к созданному поду по проброшенному порту 127.0.0.1:8080 (собственно идентичный результат):
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/02/pics/port-forward.png)
 
-## Вывод команд kubectl get pods & kubectl get services
+1 Cоздал [**Deployment приложения nginx**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/yaml/nginx-deployment.yaml) и обеспечил старт контейнера только после того, как будет запущен сервис этого приложения: ```command: ['sh', '-c', "until nslookup nginx-init-svc.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for nginx-init-svc; sleep 2; done"]```
 
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/02/pics/status.png)
+2. Убедился, что nginx не стартует. В качестве Init-контейнера использовал busybox.
+3. Создал и запустить [**Service**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/yaml/nginx-init-svc.yaml). Убедился что Init запустился.
+4. Состояние подов
+   
+до запуска сервиса:
+
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/pod_before.png)
+
+после запуска сервиса.
+
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/pod_after.png)
 
