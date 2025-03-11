@@ -14,8 +14,10 @@
 ![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/get_pods_2.png)
 
    
-Создать Service, который обеспечит доступ до реплик приложений из п.1.
-Создать отдельный Pod с приложением multitool и убедиться с помощью curl, что из пода есть доступ до приложений из п.1.
+4. Создал Service, который обеспечивает доступ до реплик приложений из п.1.
+5. Создал отдельный Pod с приложением multitool и убедился с помощью curl, что из пода есть доступ до приложений из п.1:
+
+   ![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/curl.png)
 
     
 
