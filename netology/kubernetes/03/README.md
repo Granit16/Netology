@@ -31,9 +31,9 @@
    
 до запуска сервиса:
 
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/pod_before.png)
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/get_before.png)
 
 после запуска сервиса.
 
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/pod_after.png)
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/get_after.png)
 
