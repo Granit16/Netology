@@ -5,11 +5,11 @@
 2. Увеличил количество реплик работающего приложения до 2: ```kubectl scale deployment nginx-mltl-deployment --replicas=2```.
 3. Количество подов
 
-   до масштабирования:
+до масштабирования:
    
 ![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/get_pods_1.png)
 
-   после масштабирования:
+после масштабирования:
    
 ![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/get_pods_2.png)
 
@@ -17,7 +17,7 @@
 4. Создал Service, который обеспечивает доступ до реплик приложений из п.1.
 5. Создал отдельный Pod с приложением multitool и убедился с помощью curl, что из пода есть доступ до приложений из п.1:
 
-   ![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/curl.png)
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/curl.png)
 
     
 
