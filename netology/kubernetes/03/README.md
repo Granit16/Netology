@@ -15,13 +15,13 @@
 
    
 4. Создал [**service.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/yaml/service.yaml), который обеспечивает доступ до реплик приложений из п.1.
-5. Создал отдельный Pod [**multitool.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/yaml/multitool.yaml) с приложением multitool и убедился с помощью curl, что из пода есть доступ до приложений из п.1:
+5. Создал отдельный Pod [**multitool.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/yaml/multitool.yaml) с приложением multitool и убедился с помощью curl, что из пода есть доступ до приложений из п.1 (на 80 порту nginx, на 8080 - multitool):
 
 ![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/curl.png)
 
     
 
-## Задание 2. Создать Service и подключить его к Pod
+## Задание 2. Создать Deployment и обеспечить старт основного контейнера при выполнении условий
 1. Создал Pod с именем netology-web: [**netology-web-pod.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/02/yaml/netology-web-pod.yaml)
 2. Использовал image — gcr.io/kubernetes-e2e-test-images/echoserver:2.2.
 3. Создал Service с именем netology-svc и подключил к netology-web: [**netology-svc.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/02/yaml/netology-svc.yamll)
