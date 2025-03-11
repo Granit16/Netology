@@ -1,7 +1,7 @@
 # Домашнее задание к занятию «Запуск приложений в K8S»
 
 ## Задание 1. Создать Deployment и обеспечить доступ к репликам приложения из другого Pod
-1. Создал Deployment приложения, состоящего из двух контейнеров — nginx и multitool. Для решение проблемы задал порт для multitool **1180**.
+1. Создал [**deployment.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/yaml/deployment.yaml) приложения, состоящего из двух контейнеров — nginx и multitool. Для решение проблемы задал порт для multitool **1180**.
 2. Увеличил количество реплик работающего приложения до 2: ```kubectl scale deployment nginx-mltl-deployment --replicas=2```.
 3. Количество подов
 
@@ -14,8 +14,8 @@
 ![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/get_pods_2.png)
 
    
-4. Создал Service, который обеспечивает доступ до реплик приложений из п.1.
-5. Создал отдельный Pod с приложением multitool и убедился с помощью curl, что из пода есть доступ до приложений из п.1:
+4. Создал [**service.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/yaml/service.yaml), который обеспечивает доступ до реплик приложений из п.1.
+5. Создал отдельный Pod [**multitool.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/yaml/multitool.yaml) с приложением multitool и убедился с помощью curl, что из пода есть доступ до приложений из п.1:
 
 ![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/curl.png)
 
