@@ -23,7 +23,7 @@
 
 ## Задание 2. Создать Deployment и обеспечить старт основного контейнера при выполнении условий
 
-1 Cоздал [**Deployment приложения nginx**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/yaml/nginx-deployment.yaml) и обеспечил старт контейнера только после того, как будет запущен сервис этого приложения: ```command: ['sh', '-c', "until nslookup nginx-init-svc.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for nginx-init-svc; sleep 2; done"]```
+1. Cоздал [**Deployment приложения nginx**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/yaml/nginx-deployment.yaml) и обеспечил старт контейнера только после того, как будет запущен сервис этого приложения: ```command: ['sh', '-c', "until nslookup nginx-init-svc.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for nginx-init-svc; sleep 2; done"]```
 
 2. Убедился, что nginx не стартует. В качестве Init-контейнера использовал busybox.
 3. Создал и запустить [**Service**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/yaml/nginx-init-svc.yaml). Убедился что Init запустился.
