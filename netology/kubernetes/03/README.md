@@ -4,9 +4,14 @@
 1. Создал Deployment приложения, состоящего из двух контейнеров — nginx и multitool. Для решение проблемы задал порт для multitool **1180**.
 2. Увеличил количество реплик работающего приложения до 2: ```kubectl scale deployment nginx-mltl-deployment --replicas=2```.
 3. Количество подов
+
    до масштабирования:
+   
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/get_pods_1.png)
 
    после масштабирования:
+   
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/get_pods_2.png)
 
    
 Создать Service, который обеспечит доступ до реплик приложений из п.1.
