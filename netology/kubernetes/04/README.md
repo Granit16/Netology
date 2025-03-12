@@ -8,27 +8,19 @@
 ![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/04/pics/curl.png)
    
 4. Доступ есть в том числе по доменному имени сервиса
-5. Скриншоты вывода команд п.4:
+5. Скриншот вывода команд п.4:
 
 ![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/04/pics/curl_dns.png)
 
 
     
 
-## Задание 2. Создать Deployment и обеспечить старт основного контейнера при выполнении условий
+## Задание 2. Создать Service и обеспечить доступ к приложениям снаружи кластера
 
-1. Cоздал [**Deployment приложения nginx**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/yaml/nginx-deployment.yaml) и обеспечил старт контейнера только после того, как будет запущен сервис этого приложения: ```command: ['sh', '-c', "until nslookup nginx-init-svc.$(cat /var/run/secrets/kubernetes.io/serviceaccount/namespace).svc.cluster.local; do echo waiting for nginx-init-svc; sleep 2; done"]```
-
-2. Убедился, что nginx не стартует. В качестве Init-контейнера использовал busybox.
-3. Создал и запустил [**Service**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/yaml/nginx-init-svc.yaml). Убедился что Init запустился.
-4. Состояние подов
+1. Создал отдельный [**service-out.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/04/yaml/service-out.yaml) приложения из Задания 1 с возможностью доступа снаружи кластера к nginx, используя тип NodePort.
+2. Доступ с помощью curl с локального компьютера имеется.
+3. Скриншот вывода команды п.2:
    
-до запуска сервиса:
-
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/get_before.png)
-
-после запуска сервиса.
-
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/03/pics/get_after.png)
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/04/pics/curl_nodePort.png)
 
 
