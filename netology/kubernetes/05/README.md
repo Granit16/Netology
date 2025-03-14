@@ -5,7 +5,7 @@
 2. Создать Deployment приложения [**backend.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/05/yaml/backend.yaml) из образа multitool.
 3. Внутрь этих манифестов вложил сервисы, которые обеспечивают доступ к обоим приложениям внутри кластера.
 4. Приложения видят друг друга с помощью Service, при обращении по curl из под вспомогательного приложения **multitool**.
-5. Скриншоты команды п.4:
+5. Скриншоты вывода команды п.4:
    
 ![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/05/pics/curl.png)
    
@@ -13,12 +13,10 @@
 
     
 
-## Задание 2. Создать Service и обеспечить доступ к приложениям снаружи кластера
-
-1. Создал отдельный [**service-out.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/04/yaml/service-out.yaml) приложения из Задания 1 с возможностью доступа снаружи кластера к nginx, используя тип NodePort.
-2. Доступ с помощью curl с локального компьютера имеется.
-3. Скриншот вывода команды п.2:
+## Задание 2. Создать Ingress и обеспечить доступ к приложениям снаружи кластера
+1. Включил Ingress-controller в MicroK8S: ```microk8s enable ingress```.
+2. Создал [**ingress.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/05/yaml/ingress.yaml), обеспечивающий доступ снаружи по IP-адресу кластера MicroK8S так, чтобы при запросе только по адресу открывался frontend а при добавлении /api - backend.
+3. Доступ с локального компьютера с помощью curl имеется
+4. Скриншоты вывода команды п.3:
    
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/04/pics/curl_nodePort.png)
-
-
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/05/pics/curl_local.png)
