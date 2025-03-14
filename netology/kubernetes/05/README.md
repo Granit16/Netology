@@ -2,7 +2,7 @@
 
 ## Задание 1. Создать Deployment приложений backend и frontend
 1. Создал Deployment приложения [**frontend.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/05/yaml/frontend.yaml) из образа nginx с количеством реплик 3 шт.
-2. Создать Deployment приложения [**backend.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/05/yaml/backend.yaml) из образа multitool.
+2. Создал Deployment приложения [**backend.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/05/yaml/backend.yaml) из образа multitool.
 3. Внутрь этих манифестов вложил сервисы, которые обеспечивают доступ к обоим приложениям внутри кластера.
 4. Приложения видят друг друга с помощью Service, при обращении по curl из под вспомогательного приложения **multitool**.
 5. Скриншоты вывода команды п.4:
