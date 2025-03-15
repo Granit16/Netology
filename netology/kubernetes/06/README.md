@@ -17,7 +17,7 @@
 1. Создал [**daemonset.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/06/yaml/daemonset.yaml) приложения, состоящего из multitool.
 2. Обеспечил возможность чтения файла /var/log/syslog кластера MicroK8S, подключив том типа ```hostPath```.
 3. Возможность чтения файла изнутри пода есть.
-4. Скриншоты команды из п.3:
+4. Скриншоты команды из п.3 (на самом деле там очень много логов, выводить их в срин смылса нет.):
 
 
 ![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/06/pics/cat_var_log.png)
