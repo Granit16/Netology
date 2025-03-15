@@ -13,10 +13,11 @@
 
     
 
-## Задание 2. Создать Ingress и обеспечить доступ к приложениям снаружи кластера
-1. Включил Ingress-controller в MicroK8S: ```microk8s enable ingress```.
-2. Создал [**ingress.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/05/yaml/ingress.yaml), обеспечивающий доступ снаружи по IP-адресу кластера MicroK8S так, чтобы при запросе только по адресу открывался **frontend**, а при добавлении /api - **backend**.
-3. Доступ с локального компьютера с помощью curl имеется (DNS соответствие задано в файле **/etc/hosts**)
-4. Скриншоты вывода команды п.3:
-   
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/05/pics/curl_local.png)
+## Задание 2. Создать DaemonSet приложения, которое может прочитать логи ноды.
+1. Создал [**daemonset.yaml**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/06/yaml/daemonset.yaml) приложения, состоящего из multitool.
+2. Обеспечил возможность чтения файла /var/log/syslog кластера MicroK8S, подключив том типа ```hostPath```.
+3. Возможность чтения файла изнутри пода есть.
+4. Скриншоты команды из п.3:
+
+
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/06/pics/cat_var_log.png)
