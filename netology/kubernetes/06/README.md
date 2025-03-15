@@ -7,7 +7,7 @@
 4. multitool может читать файл, который обновляется каждые 5 секунд.
 5. Скриншот вывода команды из п.4:
 
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/05/pics/curl_local.png)
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/06/pics/cat_time.png)
    
 
 
