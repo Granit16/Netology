@@ -1,9 +1,12 @@
 # Домашнее задание к занятию «Хранение в K8s. Часть 2»
 
 ## Задание 1. Создать Deployment приложения, использующего локальный PV, созданный вручную.
-1. Создал Deployment приложения, состоящего из контейнеров busybox и multitool.
-Создать PV и PVC для подключения папки на локальной ноде, которая будет использована в поде.
-Продемонстрировать, что multitool может читать файл, в который busybox пишет каждые пять секунд в общей директории.
+1. Создал [**Deployment**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/06/yaml/dep.yaml) приложения, состоящего из контейнеров busybox и multitool.
+2. Создал [**PV**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/06/yaml/pv.yaml) и [**PVC**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/06/yaml/pvc.yaml) для подключения папки на локальной ноде, которая будет использована в поде.
+3. multitool может читать файл, в который busybox пишет каждые пять секунд в общей директории:
+
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/07/pics/tail_multitool.png)
+
 Удалить Deployment и PVC. Продемонстрировать, что после этого произошло с PV. Пояснить, почему.
 Продемонстрировать, что файл сохранился на локальном диске ноды. Удалить PV. Продемонстрировать что произошло с файлом после удаления PV. Пояснить, почему.
 Предоставить манифесты, а также скриншоты или вывод необходимых команд.
