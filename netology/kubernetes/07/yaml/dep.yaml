@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busy-tool
+  labels:
+    app: myapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: delay 
+        image: busybox 
+        command: ["sh", "-c", "while true; do sleep 5; date >> /localtime/time; done"]
+        volumeMounts:
+          - name: localtime
+            mountPath: /localtime
+      - name: multitool
+        image: wbitt/network-multitool
+        volumeMounts:
+          - name: localtime
+            mountPath: /localtime
+        ports:
+        - containerPort: 8080
+        env: 
+          - name: HTTP_PORT
+            value: "1180"
+      volumes:
+        - name: localtime
+          persistentVolumeClaim:
+            claimName: pvc1
+          
+          
+          
+
