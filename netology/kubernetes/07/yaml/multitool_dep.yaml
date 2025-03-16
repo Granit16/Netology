@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: multitool-pod
+spec:
+  containers:
+  - name: multitool
+    image: wbitt/network-multitool
+    ports:
+      - containerPort: 8080
+    volumeMounts:
+      - name: nfs
+        mountPath: /localtime
+  volumes:
+  - name: nfs
+    persistentVolumeClaim:
+      claimName: nfs-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-pvc
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: "microk8s-hostpath"
+  resources:
+    requests:
+      storage: 1Gi
