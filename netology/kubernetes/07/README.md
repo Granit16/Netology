@@ -22,9 +22,7 @@
 
 ## Задание 2. Создать Deployment приложения, которое может хранить файлы на NFS с динамическим созданием PV.
 1. Включил и настроить NFS-сервер на MicroK8S: ```microk8s enable hostpath-storage```.
-2. Создал Deployment приложения состоящего из multitool, и подключил к нему PV, созданный автоматически на сервере NFS.
-Продемонстрировать возможность чтения и записи файла изнутри пода.
-Предоставить манифесты, а также скриншоты или вывод необходимых команд.
+2. Создал [**Deployment**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/07/yaml/multitool-dep.yaml) приложения состоящего из multitool, и подключил к нему PV, созданный автоматически на сервере NFS.
+3. Возможность чтения и записи файла изнутри пода есть:
 
-
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/06/pics/cat_var_log.png)
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/06/pics/nfs.png)
