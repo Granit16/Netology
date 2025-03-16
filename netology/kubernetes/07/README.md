@@ -9,7 +9,7 @@
 
 4. Удалил **Deployment** и **PVC**, **PV** остался работать, так как это независимый объект:
 
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/07/pics/del_dep_pvce.png)
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/07/pics/del_dep_pvc.png)
 
 6. Файл сохранился на локальном диске ноды, даже после удаления PV, так как мы указали политику Retain.
 Предоставить манифесты, а также скриншоты или вывод необходимых команд.
