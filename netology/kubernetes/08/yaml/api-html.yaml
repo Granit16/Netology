@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-html
+data:
+  index.html: |
+    <html>
+    <head><title>My Own Page</title></head>
+    <body><h1>Hellow World!</h1></body>
+    </html>
