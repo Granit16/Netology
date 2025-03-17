@@ -14,9 +14,13 @@
 
     
 
-## Задание 2. Создать Deployment приложения, которое может хранить файлы на NFS с динамическим созданием PV.
-1. Включил NFS-сервер на MicroK8S: ```microk8s enable hostpath-storage```.
-2. Создал [**Deployment**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/07/yaml/multitool_dep.yaml) приложения состоящего из multitool, и подключил к нему PV, созданный автоматически на сервере NFS.
-3. Возможность чтения и записи файла изнутри пода есть:
+## Задание 2.Создать приложение с вашей веб-страницей, доступной по HTTPS
+1. Создал [**Deployment**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/yaml/nginx-dep.yaml) приложения, состоящего из Nginx.
+2. Создал собственную веб-страницу и подключил её как [**ConfigMap**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/yaml/api-html.yaml) к приложению.
+3. Выпустил самоподписной сертификат SSL. Создал [**Secret**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/yaml/secret.yaml) для использования сертификата.
+4. Создал [**Ingress**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/yaml/ingress.yaml) и необходимый [**Service**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/yaml/nginx-service.yaml), подключить к **Ingress** SSL-сертификаты через созданный **Secret**.
+5. Доступ к приложению по HTTPS с локальной машины есть (DNS имя задано в файле **/etc/hosts**):
 
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/pics/nfs.png)
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/pics/https.png)
+
+
