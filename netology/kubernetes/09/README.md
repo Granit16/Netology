@@ -18,16 +18,14 @@
    - создал контекст для пользователя и кластера: ```kubectl config set-context netology --cluster=microk8s-cluster --user=netology```
 
 
+3. Создал объекты [**Role**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/09/yaml/role.yaml) и [**RoleBinding**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/09/yaml/role-binding.yaml)
+   
+5. Через роль дал созданному Пользователю права просматривать логи подов и их конфигурацию.
+   
+6. При переключении контекста возможно получать данные о подах кластера, но нельзя, например, их удалять:
 
-    
+![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/09/pics/get_delete.png)
 
-## Задание 2.Создать приложение с вашей веб-страницей, доступной по HTTPS
-1. Создал [**Deployment**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/yaml/nginx-dep.yaml) приложения, состоящего из Nginx.
-2. Создал собственную веб-страницу и подключил её как [**ConfigMap**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/yaml/api-html.yaml) к приложению.
-3. Выпустил самоподписной сертификат SSL. Создал [**Secret**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/yaml/secret.yaml) для использования сертификата.
-4. Создал [**Ingress**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/yaml/ingress.yaml) и необходимый [**Service**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/yaml/nginx-service.yaml), подключить к **Ingress** SSL-сертификаты через созданный **Secret**.
-5. Доступ к приложению по HTTPS с локальной машины есть (DNS имя задано в файле **/etc/hosts**):
-
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/pics/https.png)
+  
 
 
