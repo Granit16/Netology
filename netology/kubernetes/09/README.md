@@ -2,12 +2,19 @@
 
 ## Задание 1. Создайте конфигурацию для подключения пользователя
 1. Создайл и SSL-сертификат для подключения к кластеру и подписал его сертификатом кластера.
+ 
    ```openssl genrsa -out netology.key 2048```
+   
    ```openssl req -new -key netology.key -out netology.csr -subj "/CN=netology/O=ops"```
+   
    ```openssl x509 -req -in netology.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out netology.crt -days 500```
 
+   
+
 2. Настроил конфигурационный файл kubectl для подключения
+
    - создал пользователя **netology**: ```kubectl config set-creadentials netology --client-certificate=netology.crt --client-key=netology.key --embed-certs=true```
+  
    - создал контекст для пользователя и кластера: ```kubectl config set-context netology --cluster=microk8s-cluster --user=netology```
 
 
