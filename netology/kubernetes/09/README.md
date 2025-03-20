@@ -1,15 +1,15 @@
-# Домашнее задание к занятию «Конфигурация приложений»
+# Домашнее задание к занятию «Управление доступом»
 
-## Задание 1. Создать Deployment приложения и решить возникшую проблему с помощью ConfigMap. Добавить веб-страницу
-1. Создал [**Deployment**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/yaml/dep.yaml) приложения, состоящего из контейнеров nginx и multitool.
-2. Назначил порт для multitool с помощью [**ConfigMap**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/yaml/cm-1.yaml).
-3. pod стартовал и оба конейнера работают:
+## Задание 1. Создайте конфигурацию для подключения пользователя
+1. Создайл и SSL-сертификат для подключения к кластеру и подписал его сертификатом кластера.
+   ```openssl genrsa -out netology.key 2048```
+   ```openssl req -new -key netology.key -out netology.csr -subj "/CN=netology/O=ops"```
+   ```openssl x509 -req -in netology.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out netology.crt -days 500```
 
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/pics/get_po.png)
-   
-4. Сделал простую веб-страницу и подключил её к Nginx с помощью [**ConfigMap**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/yaml/api-html.yaml). Подключил [**Service**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/yaml/service.yaml) и обратился к нему с помощью curl:
-   
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/08/pics/curl_service.png)
+2. Настроил конфигурационный файл kubectl для подключения
+   - создал пользователя **netology**: ```kubectl config set-creadentials netology --client-certificate=netology.crt --client-key=netology.key --embed-certs=true```
+   - создал контекст для пользователя и кластера: ```kubectl config set-context netology --cluster=microk8s-cluster --user=netology```
+
 
 
     
