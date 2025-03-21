@@ -6,26 +6,12 @@
 
 ![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/10/pics/install.png)
 
-3. Образы и тэги приложений заданы переменными и при их зменении происходит их изменение:
+3. Образы и тэги приложений заданы переменными:
 
 ![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/10/pics/upgrade.png)
    
 
-2. Настроил конфигурационный файл kubectl для подключения
+## Задание 2. Запустить две версии в разных неймспейсах
 
-   - создал пользователя **netology**: ```kubectl config set-creadentials netology --client-certificate=netology.crt --client-key=netology.key --embed-certs=true```
-  
-   - создал контекст для пользователя и кластера: ```kubectl config set-context netology --cluster=microk8s-cluster --user=netology```
-
-
-3. Создал объекты [**Role**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/09/yaml/role.yaml) и [**RoleBinding**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/09/yaml/role-binding.yaml)
+1. Запустил несколько копий приложения:
    
-5. Через роль дал созданному Пользователю права просматривать логи подов и их конфигурацию.
-   
-6. При переключении контекста возможно получать данные о подах кластера, но нельзя, например, их удалять:
-
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/09/pics/get_delete.png)
-
-  
-
-
