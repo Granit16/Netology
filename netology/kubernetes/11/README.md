@@ -14,24 +14,7 @@
 | ИТОГО  | 30.25 ГБ | 17 ядер |
 
 Предлагаю использовать:
- - 3 мастер-ноды с характеристиками: 8 ГБ ОЗУ и 4 ядра CPU
- - 4 рабочие ноды с характеристиками: 12 ГБ ОЗУ и 4 ядра CPU
+ - 3 мастер-ноды с характеристиками: 8 ГБ ОЗУ и 4 ядра CPU;
+ - 4 рабочие ноды с характеристиками: 12 ГБ ОЗУ и 8 ядер CPU;
 
-1. Упаковал приложение, состоящее из двух компанентов в чарт для деплоя в разные окружения, создав соответствующие шаблоны: [**Nginx**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/10/yaml/nginx-dep.yaml) и [**Multitool**](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/10/yaml/multitool-dep.yaml)
-2. Каждый компонент приложения деплоится отдельным deployment’ом
-
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/10/pics/install.png)
-
-3. Образы и тэги приложений заданы переменными:
-
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/10/pics/upgrade.png)
-   
-
-## Задание 2. Запустить две версии в разных неймспейсах
-
-1. Запустил несколько копий приложения
-2. Одну копию в namespace **app1**, затем изменил в нем версию, вторую - в **app2**
-3. Запущенные приложения:
-
-![](https://github.com/Granit16/Netology/blob/main/netology/kubernetes/10/pics/namespace.png)
-   
+Этого бы хватило для "переезда" подов в случае выхода из строя одной из нод. Также необходими расположить ноды в различных зонах доступности.
