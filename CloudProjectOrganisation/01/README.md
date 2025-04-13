@@ -8,7 +8,26 @@
  - Также в этой подсети создал ВМ **netology-public-vm** с публичным IP, подключился к ней и убедился, что доступ к интернету есть.
 
 3. Создал "приватную" подсеть с названием **private**, сетью 192.168.20.0/24.
- - Создал route table **netology-rt**. Добавил статический маршрут, направляющий весь исходящий трафик private сети в NAT-инстанс. Указал эту таблицу маршрутизации для подсети **private**
+ - Создал route table **netology-rt**. Добавил статический маршрут, направляющий весь исходящий трафик private сети в NAT-инстанс. Указал эту таблицу маршрутизации для подсети **private**:
+ ```
+resource "yandex_vpc_route_table" "netology-rt" {
+  network_id = yandex_vpc_network.netology-vpc.id
+
+  static_route {
+    destination_prefix = "0.0.0.0/0"
+    next_hop_address   = "192.168.10.254"
+  }
+}
+
+resource "yandex_vpc_subnet" "private" {
+  name           = var.vpc_subnet_name20
+  zone           = var.zone_a
+  network_id     = yandex_vpc_network.netology-vpc.id
+  v4_cidr_blocks = var.cidr20
+  route_table_id = yandex_vpc_route_table.netology-rt.id
+}
+```
+
  - Создал в "приватной" подсети виртуалку с внутренним IP, подключился к ней через виртуалку, созданную ранее (пробросив SSH-ключ), и убедился, что доступ к интернету есть.
 
 
