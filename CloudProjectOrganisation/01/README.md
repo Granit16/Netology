@@ -4,7 +4,44 @@
 1. С помощью Terrform cоздал VPC **netology-vpc**
    
 2. Создал "публичную" подсеть с название **public**, сетью 192.168.10.0/24.
- - Создал в подсети NAT-инстанс **netology-nat-vm**, присвоил ему адрес 192.168.10.254. Вкачестве image_id использовал fd80mrhj8fl2oe87o4e1.
+ - Создал в подсети NAT-инстанс **netology-nat-vm**, присвоил ему адрес 192.168.10.254. Вкачестве image_id использовал fd80mrhj8fl2oe87o4e1:
+```
+resource "yandex_compute_instance" "nat_vm" {
+  name              = local.nat_vm_name
+  platform_id       = var.vm_platform
+  hostname          = local.nat_vm_name
+
+  resources {
+    cores         = var.vms_resources.web.cores
+    memory        = var.vms_resources.web.memory
+    core_fraction = var.vms_resources.web.core_fraction
+  }
+
+  boot_disk {
+    initialize_params {
+      image_id = var.nat_image_id
+    }
+  }
+
+  scheduling_policy {
+    preemptible = true
+  }
+
+  network_interface {
+    subnet_id   = yandex_vpc_subnet.public.id
+    nat         = true
+    ip_address  = var.nat_vm_ip_adress
+  }
+
+  metadata = {
+    serial-port-enable = 1
+    ssh-keys = "ubuntu:${var.vms_ssh_root_key}"
+  }
+
+}
+```
+
+
  - Также в этой подсети создал ВМ **netology-public-vm** с публичным IP, подключился к ней и убедился, что доступ к интернету есть.
 
 3. Создал "приватную" подсеть с названием **private**, сетью 192.168.20.0/24.
@@ -15,7 +52,7 @@ resource "yandex_vpc_route_table" "netology-rt" {
 
   static_route {
     destination_prefix = "0.0.0.0/0"
-    next_hop_address   = "192.168.10.254"
+    next_hop_address   = var.nat_vm_ip_adress
   }
 }
 
