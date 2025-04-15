@@ -17,4 +17,5 @@ EOF
 
 3. Создал сетевой балансировщик **netology-nlb** и подключил к нему **netology-ig**
 После удаления одной (а далее и двух ВМ), работоспостобность сохранилась:
+
   ![](https://github.com/Granit16/Netology/blob/main/CloudProjectOrganisation/02/pic/nlb.png)
