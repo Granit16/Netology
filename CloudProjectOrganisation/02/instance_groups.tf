@@ -4,7 +4,7 @@ resource "yandex_iam_service_account" "netology-sa" {
 
 resource "yandex_resourcemanager_folder_iam_member" "editor" {
   folder_id = var.folder_id
-  role      = "admin"
+  role      = "editor"
   member    = "serviceAccount:${yandex_iam_service_account.netology-sa.id}"
 }
 
