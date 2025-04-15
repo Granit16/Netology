@@ -15,6 +15,6 @@ echo '</body></html>' >> /var/www/html/index.html
 EOF
 ```
 
-3. Создал сетевом балансировщик **netology-nlb** и подключил к нему **netology-ig**
-После удаления одной и далле двух ВМ, работоспостобность сохранилась:
+3. Создал сетевой балансировщик **netology-nlb** и подключил к нему **netology-ig**
+После удаления одной (а далее и двух ВМ), работоспостобность сохранилась:
   ![](https://github.com/Granit16/Netology/blob/main/CloudProjectOrganisation/02/pic/nlb.png)
